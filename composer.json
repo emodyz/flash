@@ -1,0 +1,45 @@
+{
+    "name": "emodyz/flash",
+    "description": "Flash message manager based on laracasts/flash",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Saber Nouira",
+            "email": "contact@emodyz.eu",
+            "homepage": "https://emodyz.eu"
+        }
+    ],
+    "homepage": "https://github.com/emodyz/flash",
+    "keywords": ["Laravel", "Flash"],
+    "require": {
+        "php": ">=8.0",
+        "illuminate/support": "~8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Emodyz\\Flash\\": "src/"
+        },
+        "files": [
+            "src/Helpers/flash.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Emodyz\\Flash\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Emodyz\\Flash\\FlashServiceProvider"
+            ],
+            "aliases": {
+                "Flash": "Emodyz\\Flash\\Facades\\Flash"
+            }
+        }
+    }
+}
