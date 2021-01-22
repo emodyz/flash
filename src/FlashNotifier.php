@@ -106,9 +106,7 @@ class FlashNotifier
     public function message($title = null, string $message = null, $level = ''): FlashNotifier
     {
 
-        // dd($message);
-
-        // If no message was provided, we should update
+        // If no title & message was provided, we should update
         // the most recently added message.
         if (! $message && ! $title) {
             return $this->updateLastMessage(compact('level'));
