@@ -97,13 +97,17 @@ class FlashNotifier
     /**
      * Flash a general message.
      *
+     * string|null $title
      * @param string| null $title
      * @param string| null $message
-     * @param null $level
+     * @param string $level
      * @return $this
      */
-    public function message(string $title = null, string $message = null, $level = null): FlashNotifier
+    public function message($title = null, string $message = null, $level = ''): FlashNotifier
     {
+
+        // dd($message);
+
         // If no message was provided, we should update
         // the most recently added message.
         if (! $message && ! $title) {
@@ -127,6 +131,9 @@ class FlashNotifier
      */
     protected function updateLastMessage($overrides = []): FlashNotifier
     {
+
+        // dd($this->messages);
+
         $this->messages->last()->update($overrides);
 
         return $this;

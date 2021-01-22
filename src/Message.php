@@ -23,7 +23,7 @@ class Message implements \ArrayAccess
      *
      * @var string
      */
-    public string $level = 'info';
+    public string $level = '';
 
     /**
      * Whether the message should auto-hide.
